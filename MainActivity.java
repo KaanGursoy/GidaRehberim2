@@ -17,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void doUser(View view){
 
-        Intent intent = new Intent (getApplicationContext (),LoginActivity.class);
+        Intent intent = new Intent (getApplicationContext (),UserLoginActivity.class);
+        startActivity (intent);
+    }
+    public void clickOnButton(View view) {
+        Intent intent = new Intent (getApplicationContext (),MainActivity.class);
         startActivity (intent);
     }
 }

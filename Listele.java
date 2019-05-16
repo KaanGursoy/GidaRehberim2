@@ -20,6 +20,15 @@ public class Listele extends AppCompatActivity {
         List<Kullanici>kullaniciList= new ArrayList<Kullanici> ();
         kullaniciList=db.getirMusteriListesi();
 
+        StringBuilder sb = new StringBuilder ();
+
+        for (Kullanici _kullanici : kullaniciList){
+            String icerik ="";
+            icerik = "ID: " + _kullanici.getId () + "\nAd: " + _kullanici.getAd () + "\nSoyad: " + _kullanici.getSoyad () + "\nMail: " + _kullanici.getMail () + "\nSifre: " + _kullanici.getSifre () + "\n\n\n";
+            sb.append (icerik);
+        }
+
+        txtKullaniciListesi.setText (sb);
 
 
     }

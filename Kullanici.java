@@ -6,6 +6,9 @@ public class Kullanici {
     private String Soyad;
     private String Mail;
     private String Sifre;
+    public Kullanici(){
+
+    }
 
     public Kullanici(String ad,String soyad,String mail,String sifre) {
         Ad = ad;

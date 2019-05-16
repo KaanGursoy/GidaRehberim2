@@ -35,8 +35,10 @@ public class Database extends SQLiteOpenHelper {
     public long ekleKullanici(Kullanici kullanici) {
         SQLiteDatabase db = this.getWritableDatabase ();
         ContentValues cv =new ContentValues ();
-        cv.put("KullaniciAdi",kullanici.getAd());
-        cv.put ("kullaniciSifresi",kullanici.getSifre());
+        cv.put("KullaniciAd",kullanici.getAd());
+        cv.put("KullaniciSoyad",kullanici.getSoyad ());
+        cv.put("KullaniciMail",kullanici.getMail ());
+        cv.put ("KullaniciSifre",kullanici.getSifre());
 
         long id = db.insert (kullanici_tablosu, null,cv);
         return id;
@@ -50,10 +52,26 @@ public class Database extends SQLiteOpenHelper {
         Cursor c = db.rawQuery (sqlSorgusu,null);
 
         int siraNoId = c.getColumnIndex ("ID");
-        int siraNoAd = c.getColumnIndex ("KullamiciAdi");
+        int siraNoAd = c.getColumnIndex ("KullaniciAd");
         int siraNoSoyad = c.getColumnIndex ("KullaniciSoyad");
         int siraNoMail = c.getColumnIndex ("KullaniciMail");
         int siraNoSifre = c.getColumnIndex ("KullaniciSifre");
+
+        try {
+            while (c.moveToNext ()){
+                Kullanici _kullanici = new Kullanici ();
+                _kullanici.setId (c.getInt (siraNoId));
+                _kullanici.setAd (c.getString (siraNoAd));
+                _kullanici.setSoyad (c.getString (siraNoSoyad));
+                _kullanici.setMail (c.getString (siraNoMail));
+                _kullanici.setSifre (c.getString (siraNoSifre));
+                kullaniciList.add (_kullanici);
+            }
+        }
+        finally {
+            c.close ();
+            db.close ();
+        }
 
 
         return kullaniciList;
