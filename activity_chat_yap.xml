@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient">
+
+<TextView
+    android:id="@+id/textViewBaslik"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+    android:textSize="28sp"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:text="@string/oda_smi"/>
+
+<ListView
+
+    android:id="@+id/listViewChatYap"
+    android:layout_width="match_parent"
+
+    android:layout_height="255dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextMesaj"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.95"
+            android:background="@drawable/bg_form_rounded"
+            android:hint="@string/mesaj_n_z"
+            android:inputType="textPersonName"
+             />
+
+        <Button
+            android:id="@+id/buttonMesajGonder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_button_rounded"
+            android:text="@string/gonder"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageView4"
+        android:layout_width="192dp"
+        android:layout_height="192dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:onClick="kefirNedirClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/kefir"
+
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+    />
+
+   <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="416dp"
+        android:layout_height="102dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logoyazi"
+        tools:layout_editor_absoluteY="4dp"
+        tools:ignore="MissingConstraints"
+        android:onClick="LogoClick"/>
+
+    <ImageButton
+        android:id="@+id/imageView8"
+        android:layout_width="196dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="213dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:srcCompat="@drawable/erik"
+        android:onClick="erik"/>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="197dp"
+        android:layout_height="248dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/balkabagi"
+        android:onClick="balkabagi"/>
+
+
+</android.support.constraint.ConstraintLayout>
